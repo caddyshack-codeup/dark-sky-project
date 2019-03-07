@@ -1,8 +1,38 @@
 $(document).ready(function() {
     "use strict";
+    ///////////////////////////////////////////
+    /////////////// Mapbox Map ////////////////
+    ///////////////////////////////////////////
+    mapboxgl.accessToken = mapboxAccessToken;
+    var coordinates = document.getElementById('coordinates');
+    var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'mapbox://styles/mapbox/streets-v9',
+        center: [-98.491142, 29.424349],
+        zoom: 4
+    });
 
-    var darkSkyUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyToken + "/29.4241,-98.4936";
+    var marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.491142, 29.424349])
+        .addTo(map);
 
+
+
+    function onDragEnd() {
+        ////////////////////////////////
+        /////// Long/Lat Display ///////
+        ////////////////////////////////
+        var lngLat = marker.getLngLat();
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = 'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+
+
+        ///////////////////////////////
+        /////// Weather Updates ///////
+        ///////////////////////////////
+        var darkSkyUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyToken + "/" + lngLat.lat + "," + lngLat.lng;
 
 
         $.get(darkSkyUrl).done(function (data) {
@@ -15,7 +45,7 @@ $(document).ready(function() {
             string += "<p id='temperature'>" +  '<h2>' + Math.round(temperature) + '&#176' + '</h2>';
             string += "<div id='icon'>" + '</div>';
             string += "<p id='summary'>" + summary + '</p>';
-            string += "<p id='humidity'>" + 'Humidity: ' + (humidity * 100) + '%' + '</p>';
+            string += "<p id='humidity'>" + 'Humidity: ' + Math.round(humidity * 100) + '%' + '</p>';
 
             $('.left-box').html(string);
 
@@ -27,19 +57,13 @@ $(document).ready(function() {
 
         });
 
-
-
-
-
-    function mapBox() {
-        mapboxgl.accessToken = mapboxAccessToken;
-        var map = new mapboxgl.Map({
-            container: 'map',
-            style: 'mapbox://styles/mapbox/streets-v9'
-        });
     }
 
-   mapBox();
+    marker.on('dragend', onDragEnd);
+
+
+
+
 
 
 
