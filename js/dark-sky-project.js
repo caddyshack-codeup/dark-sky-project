@@ -81,7 +81,7 @@ $(document).ready(function() {
             var humidity = data.currently.humidity;
             var string = '';
             string += "<p id='temperature'>" +  '<h2>' + Math.round(temperature) + '&#176' + '</h2>';
-            string += "<div id='icon'>" + '</div>';
+            string += "<img id='icon'>";
             string += "<p id='summary'>" + summary + '</p>';
             string += "<p id='humidity'>" + 'Humidity: ' + Math.round(humidity * 100) + '%' + '</p>';
 
