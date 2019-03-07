@@ -17,3 +17,14 @@ $(document).ready(function() {
 
 
 });
+
+var icons = $.get('conditions.json');
+
+icons.done(function(conditions){
+    for (var i = 0; i < conditions.length; i++){
+            if (conditions[i].condition === summary) {
+                $('#weather-icon').html(conditions[i].icon);
+                break;
+        }
+    }
+});
