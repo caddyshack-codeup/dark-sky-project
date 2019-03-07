@@ -34,11 +34,26 @@ $(document).ready(function() {
         var humidity = data.currently.humidity;
         var string = '';
         string += "<p id='temperature'>" +  '<h2>' + Math.round(temperature) + '&#176' + '</h2>';
-        string += "<div id='icon'>" + '</div>';
+        string += "<img id='icon'>";
         string += "<p id='summary'>" + summary + '</p>';
         string += "<p id='humidity'>" + 'Humidity: ' + Math.round(humidity * 100) + '%' + '</p>';
 
         $('.left-box').html(string);
+        console.log(icon);
+
+        //Weather icon population
+        var conditions = $.get('conditions.json');
+
+        conditions.done(function(weather){
+            for (var i = 0; i < weather.length; i++){
+                if (icon === weather[i].condition) {
+                    $('#icon').attr('src', weather[i].icon)
+
+                }
+            }
+        })
+
+
     });
 
 
@@ -72,13 +87,23 @@ $(document).ready(function() {
 
             $('.left-box').html(string);
 
+            //Weather icon population
+            var conditions = $.get('conditions.json');
+
+            conditions.done(function(weather){
+                for (var i = 0; i < weather.length; i++){
+                    if (icon === weather[i].condition) {
+                        $('#icon').attr('src', weather[i].icon)
+
+                    }
+                }
+            })
 
         });
 
     }
 
     marker.on('dragend', onDragEnd);
-
 
 
 

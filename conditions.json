@@ -3,70 +3,70 @@
   {
 
     "condition": "clear-day",
-    "icon": "Icons/Sun.svg"
+    "icon": "./Icons/Sun.svg"
     
   },
 
   {
 
     "condition": "clear-night",
-    "icon": "Icons/Moon.svg"
+    "icon": "./Icons/Moon.svg"
 
   },
 
   {
 
     "condition": "rain",
-    "icon": "Icons/Cloud-Rain.svg"
+    "icon": "./Icons/Cloud-Rain.svg"
 
   },
 
   {
 
     "condition": "snow",
-    "icon": "Icons/Cloud-Snow.svg"
+    "icon": "./Icons/Cloud-Snow.svg"
 
   },
 
   {
 
     "condition": "sleet",
-    "icon": "Icons/Cloud-Hail.svg"
+    "icon": "./Icons/Cloud-Hail.svg"
 
   },
 
   {
 
     "condition": "wind",
-    "icon": "Icons/Cloud-Wind.svg"
+    "icon": "./Cloud-Wind.svg"
 
   },
 
   {
 
     "condition": "fog",
-    "icon": "Icons/Cloud-Fog.svg"
+    "icon": "./Icons/Cloud-Fog.svg"
 
   },
 
   {
 
     "condition": "cloudy",
-    "icon": "Icons/Cloud.svg"
+    "icon": "./Icons/Cloud.svg"
 
   },
 
   {
 
     "condition": "partly-cloudy-day",
-    "icon": "Icons/Cloud-Sun.svg"
+    "icon": "./Icons/Cloud-Sun.svg"
 
   },
 
   {
 
     "condition": "partly-cloudy-night",
-    "icon": "Icons/Cloud-Moon.svg"
+    "icon": "./Icons/Cloud-Moon.svg"
 
   }
 ]
