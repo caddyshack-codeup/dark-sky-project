@@ -10,21 +10,10 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
     <link href="https://fonts.googleapis.com/css?family=Abel|Anton" rel="stylesheet">
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.1/mapbox-gl.css' rel='stylesheet' />
+    <link href="https://fonts.googleapis.com/css?family=Sniglet" rel="stylesheet">
 
-    <!--<link rel="stylesheet" href="css/############.css">-->
-    <style>
-        body {
-            background: #A9DCFB;
-            box-sizing: border-box;
-        }
+    <link rel="stylesheet" href="css/dark-sky.css">
 
-        .boxes {
-            width: auto;
-            height: 9em;
-            border: 1px solid gray;
-            background: #F2F2F2;
-        }
-    </style>
 </head>
 <body>
 <!--<div class="nav-background bg-light"></div>-->
@@ -47,7 +36,9 @@
 
         <div class="container">
             <div class="row">
-                <div class="col-4 boxes">
+                <div class="col-4 boxes left-box">
+
+
 
                 </div>
                 <div class="col-4 boxes">
@@ -61,6 +52,7 @@
 
         <div class="container">
             <div id='map' style='width: 100%; height: 50em; margin-top: 1em;'></div>
+            <pre id='coordinates' class='coordinates'></pre>
         </div>
 
     </main>
