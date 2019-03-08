@@ -1,7 +1,7 @@
 body {
     background-color: white;
     box-sizing: border-box;
-    font-family: 'Hind Siliguri', sans-serif;
+    font-family: 'Open Sans Condensed', sans-serif;
     margin: 0 auto;
 }
 .buttons {
@@ -13,6 +13,7 @@ button {
     border-radius: 2px 2px 2px 2px;
     height: 40px;
     width: 20%;
+    font-size: 20px;
 }
 button:hover {
     background-color: #e0e0e0
@@ -24,7 +25,6 @@ button:hover {
     overflow: visible;
     text-align: center;
     margin-top: 30px;
-    color: white;
 }
 .today-button-results {
     width: 100%;
@@ -44,13 +44,13 @@ button:hover {
 .three-day-button-results {
     background-color: rgb(115, 199, 233);
     width: 33%;
-    height: 270px;
+    height: 320px;
     float: left;
     padding: 15px 25px 0 25px;
     font-size: small;
 }
 .three-day-button-results h2 {
-    font-size: 25px;
+    font-size: 35px;
 }
 .eachDay:first-of-type {
     width: 100%;
@@ -67,7 +67,7 @@ button:hover {
     width: calc(50% / 3);;
     float: left;
     padding: 12px;
-    height: 240px;
+    height: 320px;
     font-size: x-small;
     margin-bottom: 80px;
     background-color: rgb(115, 199, 233);
@@ -115,14 +115,19 @@ button:hover {
         font-size: medium;
     }
     .eachDay:first-of-type h2 {
-        font-size: 25px;
+        font-size: 35px;
+        margin-bottom: 27px;
     }
     .eachDay {
         width: calc(100% / 7);;
         float: left;
         padding: 12px;
         height: 330px;
-        font-size: medium;
+        font-size: 40px;
+    }
+    .eachDay h2 {
+        font-size: 35px;
+        margin-bottom: 0;
     }
     .three-day-button-results {
         padding: 15px 30px 0 30px;
@@ -130,7 +135,7 @@ button:hover {
         height: 330px;
     }
     .three-day-button-results h2 {
-        font-size: 40px;
+        font-size: 45px;
 
     }
 }

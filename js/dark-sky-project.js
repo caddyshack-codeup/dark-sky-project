@@ -131,9 +131,6 @@ $(document).ready(function() {
         });
     }
 
-
-
-    hoverOverButtons();
     clickTodayButton();
     click7DayButton();
     click3DayButton();
@@ -220,14 +217,5 @@ $(document).ready(function() {
     }
 
     marker.on('dragend', onDragEnd);
-
-
-
-
-
-
-
-
-
 
 });
