@@ -88,6 +88,7 @@ $(document).ready(function() {
                         html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                 }
 
+
                 html += dayOfWeek;
                 html += "<img id='icon'>";
                 html += "<p id='summary'>" + day[i].summary + '</p>';
