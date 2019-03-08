@@ -1,3 +1,3 @@
-var darkSkyToken = "f9f09e56a7ba38aadf5ecc54f3b8e269";
+var darkSkyToken = "6ed9c379d501a8448015e2ea4ba53251";
 
-var mapboxAccessToken = "pk.eyJ1IjoiamVybG9nYW4iLCJhIjoiY2pza21nNzh1Mnl6cDN5b2E2cWczYXpncCJ9.U5POBulBL3zmcahwTxC2Qw";
+var mapboxAccessToken = "pk.eyJ1IjoidGVjbGF5dG9uIiwiYSI6ImNqc3l0NDBwejBnM2k0NHBpMGY2OHF2dzYifQ.-cxVnF_CUwVl16ucIxRE7A";
