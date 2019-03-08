@@ -26,11 +26,14 @@ $(document).ready(function() {
         .addTo(map);
 
 
+
+
     ////////////////////////////////
     /////// Default marker html ///////
     ////////////////////////////////
 
     var darkSkyUrl = "https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/" + darkSkyToken + "/29.424349, -98.491142";
+
 
 
     function getData() {
@@ -120,6 +123,37 @@ $(document).ready(function() {
     ///////////////////////////////
 
 
+    $.get(darkSkyUrl).done(function (data) {
+        var temperature = data.currently.temperature;
+        var feelsLike = data.currently.apparentTemperature;
+        var icon = data.currently.icon;
+        var summary = data.currently.summary;
+        var humidity = data.currently.humidity;
+        var string = '';
+        string += "<p id='temperature'>" +  '<h2>' + Math.round(temperature) + '&#176' + '</h2>';
+        string += "<img id='icon'>";
+        string += "<p id='summary'>" + summary + '</p>';
+        string += "<p id='humidity'>" + 'Humidity: ' + Math.round(humidity * 100) + '%' + '</p>';
+
+        $('.left-box').html(string);
+        console.log(icon);
+
+        //Weather icon population
+        var conditions = $.get('conditions.json');
+
+        conditions.done(function(weather){
+            for (var i = 0; i < weather.length; i++){
+                if (icon === weather[i].condition) {
+                    $('#icon').attr('src', weather[i].icon)
+
+                }
+            }
+        })
+
+
+    });
+
+
     function clickTodayButton() {
         $('#today').click(function (e) {
             e.preventDefault();
@@ -164,6 +198,7 @@ $(document).ready(function() {
 
 
         $.get(darkSkyUrl).done(function (data) {
+
             var day = data.daily.data;
             var todayTemperature = data.currently.temperature;
             var html = '';
@@ -179,6 +214,18 @@ $(document).ready(function() {
 
                 //checks which day of the week and changes number to actual string day...
                 //also checks to see if day is today and if it is name it 'today' and give it current temp.
+
+            var temperature = data.currently.temperature;
+            var feelsLike = data.currently.apparentTemperature;
+            var icon = data.currently.icon;
+            var summary = data.currently.summary;
+            var humidity = data.currently.humidity;
+            var string = '';
+            string += "<p id='temperature'>" +  '<h2>' + Math.round(temperature) + '&#176' + '</h2>';
+            string += "<img id='icon'>";
+            string += "<p id='summary'>" + summary + '</p>';
+            string += "<p id='humidity'>" + 'Humidity: ' + Math.round(humidity * 100) + '%' + '</p>';
+
 
                 switch (dayOfWeek) {
                     case today:
@@ -221,8 +268,10 @@ $(document).ready(function() {
                 html += '</div>';
             }
 
+
             $('#box').html(html);
             console.log(darkSkyUrl);
+
 
             //Weather icon population
             var conditions = $.get('conditions.json');
@@ -234,7 +283,11 @@ $(document).ready(function() {
 
                     }
                 }
+
             });
+
+            })
+
 
         });
 
@@ -259,6 +312,30 @@ $(document).ready(function() {
 
         var accessToken = mapboxAccessToken;
 
+<<<<<<< HEAD
+=======
+    }));
+
+
+
+    function inputLocation() {
+        $('#button').click(function() {
+            marker.remove();
+            var input = $('#search-box').val();
+            // console.log(input)
+
+            locationName = {
+                address: input
+                // popupHTML: "<p>World Traveler</p>"
+            }
+
+            placeMarkerAndPopup(locationName, accessToken, map)
+        });
+
+
+        var accessToken = mapboxAccessToken;
+
+>>>>>>> b63b4617e561d7b11df4fd2fdc525f6b81289523
         mapboxgl.accessToken = accessToken;
 
         var map = new mapboxgl.Map({
@@ -273,6 +350,7 @@ $(document).ready(function() {
         })
             .setLngLat([-98.491142, 29.424349])
             .addTo(map);
+<<<<<<< HEAD
 
 
         function placeMarkerAndPopup(info, token, map) {
@@ -290,6 +368,35 @@ $(document).ready(function() {
         }
 
     }
+=======
+
+
+        function placeMarkerAndPopup(info, token, map) {
+            geocode(info.address, token).then(function(coordinates) {
+
+                console.log(coordinates);
+                // var popup = new mapboxgl.Popup()
+                //     .setHTML(info.popupHTML);
+                marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                //     .setPopup(popup);
+                // popup.addTo(map);
+            });
+        }
+
+    }
+
+
+
+
+
+
+
+
+
+});
+>>>>>>> b63b4617e561d7b11df4fd2fdc525f6b81289523
 
 
 });
