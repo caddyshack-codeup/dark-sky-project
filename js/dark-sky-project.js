@@ -57,35 +57,35 @@ $(document).ready(function() {
                 switch (dayOfWeek) {
                     case today:
                         dayOfWeek = 'Currently';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(todayTemperature) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(todayTemperature) + '&#176' + '</h2>';
                         break;
                     case 0:
                         dayOfWeek = 'Sunday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                         break;
                     case 1:
                         dayOfWeek = 'Monday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                         break;
                     case 2:
                         dayOfWeek = 'Tuesday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                         break;
                     case 3:
                         dayOfWeek = 'Wednesday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                         break;
                     case 4:
                         dayOfWeek = 'Thursday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                         break;
                     case 5:
                         dayOfWeek = 'Friday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                         break;
                     case 6:
                         dayOfWeek = 'Saturday';
-                        html += "<p id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
+                        html += "<span id='temperature'>" + '<h2>' + Math.round(day[i].temperatureHigh) + '&#176' + '/' + Math.round(day[i].temperatureLow) + '&#176' + '</h2>';
                 }
 
                 html += dayOfWeek;
@@ -106,14 +106,6 @@ $(document).ready(function() {
     ///////////////////////////////
     /////// button logic ///////
     ///////////////////////////////
-
-    function hoverOverButtons() {
-        $('button').hover(function () {
-            $(this).css('color', 'blue');
-        }, function () {
-            $(this).css('color', 'black')
-        });
-    }
 
 
     function clickTodayButton() {
@@ -145,18 +137,6 @@ $(document).ready(function() {
     clickTodayButton();
     click7DayButton();
     click3DayButton();
-
-
-
-
-
-    ////////////////////////////////////////////////////////////////////////////////////////////
-    /////// box styling - targeting the first box and making it different from the rest ///////
-    //////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
 
 
     function onDragEnd() {
@@ -230,15 +210,10 @@ $(document).ready(function() {
                 html += "<p id='summary'>" + day[i].summary + '</p>';
                 html += "<p id='humidity'>" + 'Humidity: ' + Math.round(day[i].humidity * 100) + '%' + '</p>';
                 html += '</div>';
-
-
             }
 
             $('#box').html(html);
             console.log(darkSkyUrl);
-
-
-
 
         });
 
