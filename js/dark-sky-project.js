@@ -19,6 +19,8 @@ $(document).ready(function() {
         .addTo(map);
 
 
+
+
     ////////////////////////////////
     /////// Default marker html ///////
     ////////////////////////////////
@@ -78,6 +80,63 @@ $(document).ready(function() {
     }
 
     marker.on('dragend', onDragEnd);
+
+
+
+    }));
+
+
+
+    function inputLocation() {
+        $('#button').click(function() {
+            marker.remove();
+            var input = $('#search-box').val();
+            // console.log(input)
+
+            locationName = {
+                address: input
+                // popupHTML: "<p>World Traveler</p>"
+            }
+
+            placeMarkerAndPopup(locationName, accessToken, map)
+        });
+
+
+        var accessToken = mapboxAccessToken;
+
+        mapboxgl.accessToken = accessToken;
+
+        var map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v9',
+            zoom: 4,
+            center: [-98.4916, 29.4252]
+        });
+
+        var marker = new mapboxgl.Marker({
+
+        })
+            .setLngLat([-98.491142, 29.424349])
+            .addTo(map);
+
+
+        function placeMarkerAndPopup(info, token, map) {
+            geocode(info.address, token).then(function(coordinates) {
+
+                console.log(coordinates);
+                // var popup = new mapboxgl.Popup()
+                //     .setHTML(info.popupHTML);
+                marker = new mapboxgl.Marker()
+                    .setLngLat(coordinates)
+                    .addTo(map)
+                //     .setPopup(popup);
+                // popup.addTo(map);
+            });
+        }
+
+    }
+
+
 
 
 
