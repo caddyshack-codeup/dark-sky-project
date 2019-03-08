@@ -148,8 +148,9 @@ $(document).ready(function() {
 
                 }
             }
-        })
+        });
 
+        marker.on('dragend', onDragEnd);
 
     });
 
@@ -289,13 +290,14 @@ $(document).ready(function() {
             })
 
 
-        });
+        }
 
-    }
+    });
 
-    marker.on('dragend', onDragEnd);
 
-    function inputLocation() {
+
+
+function inputLocation() {
         $('#button').click(function() {
             marker.remove();
             var input = $('#search-box').val();
@@ -304,7 +306,7 @@ $(document).ready(function() {
             locationName = {
                 address: input
                 // popupHTML: "<p>World Traveler</p>"
-            }
+            };
 
             placeMarkerAndPopup(locationName, accessToken, map)
         });
@@ -312,30 +314,7 @@ $(document).ready(function() {
 
         var accessToken = mapboxAccessToken;
 
-<<<<<<< HEAD
-=======
-    }));
 
-
-
-    function inputLocation() {
-        $('#button').click(function() {
-            marker.remove();
-            var input = $('#search-box').val();
-            // console.log(input)
-
-            locationName = {
-                address: input
-                // popupHTML: "<p>World Traveler</p>"
-            }
-
-            placeMarkerAndPopup(locationName, accessToken, map)
-        });
-
-
-        var accessToken = mapboxAccessToken;
-
->>>>>>> b63b4617e561d7b11df4fd2fdc525f6b81289523
         mapboxgl.accessToken = accessToken;
 
         var map = new mapboxgl.Map({
@@ -350,7 +329,7 @@ $(document).ready(function() {
         })
             .setLngLat([-98.491142, 29.424349])
             .addTo(map);
-<<<<<<< HEAD
+
 
 
         function placeMarkerAndPopup(info, token, map) {
@@ -367,12 +346,12 @@ $(document).ready(function() {
             });
         }
 
-    }
-=======
+
+
 
 
         function placeMarkerAndPopup(info, token, map) {
-            geocode(info.address, token).then(function(coordinates) {
+            geocode(info.address, token).then(function (coordinates) {
 
                 console.log(coordinates);
                 // var popup = new mapboxgl.Popup()
@@ -385,19 +364,7 @@ $(document).ready(function() {
             });
         }
 
-    }
 
+}
 
-
-
-
-
-
-
-
-});
->>>>>>> b63b4617e561d7b11df4fd2fdc525f6b81289523
-
-
-});
 
