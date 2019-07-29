@@ -345,26 +345,6 @@ function inputLocation() {
                 // popup.addTo(map);
             });
         }
-
-
-
-
-
-        function placeMarkerAndPopup(info, token, map) {
-            geocode(info.address, token).then(function (coordinates) {
-
-                console.log(coordinates);
-                // var popup = new mapboxgl.Popup()
-                //     .setHTML(info.popupHTML);
-                marker = new mapboxgl.Marker()
-                    .setLngLat(coordinates)
-                    .addTo(map)
-                //     .setPopup(popup);
-                // popup.addTo(map);
-            });
-        }
-
-
 }
 
 

@@ -88,10 +88,9 @@ button:hover {
     text-transform: uppercase;
 }
 #icon {
-<<<<<<< HEAD
-=======
+
     /*background-image: url("../Icons/Cloud-Drizzle-Moon.svg");*/
->>>>>>> b63b4617e561d7b11df4fd2fdc525f6b81289523
+
     background-size: contain;
     height: 80px;
     width: 80px;
