@@ -4,39 +4,59 @@
     <meta charset='utf-8' />
     <title>Place the geocoder input outside the map</title>
     <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
+
     <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.css' rel='stylesheet' />
-    <style>
-        body { margin:0; padding:0; }
-        #map { position:absolute; top:0; bottom:0; width:100%; }
-    </style>
+    <link rel="stylesheet" href="css/dark-sky.css">
+    <link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
 </head>
 <body>
 
+<!--START OF HTML ELEMENTS-->
 
-<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
-<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.css' type='text/css' />
-<style>
-    body {
-        text-align: center;
-    }
-
-    .geocoder {
-        z-index:1;
-        width:50%;
-        margin: 0 auto;
-    }
-    .mapboxgl-ctrl-geocoder { min-width:100%; }
-</style>
 <div id='map'></div>
-<h4>There is a map but it is not visible. To change go into inline styling and change the width of the map to desired percentage.</h4>
 <h1>Enter name of city:</h1>
 <div id='geocoder' class='geocoder'></div>
-<div>
-    <h1>Your coordinates are:</h1>
-    <p>coords</p>
+<div class="coordinates-div">
+    <p class="live-coords"></p>
+    <main class="container-fluid">
+        <div class="buttons">
+            <button id="today">Today</button>
+            <button id="3-day">3-Day</button>
+            <button id="7-day">7-Day</button>
+            <button id="10-day">10-Day</button>
+        </div>
+
+        <div class="boxes" id="box">
+            <table>
+                <thead>dad?</thead>
+                <tr>
+                    <th>Day</th>
+                    <th>Description</th>
+                    <th>High/Low</th>
+                    <th>Precip</th>
+                    <th>Wind</th>
+                    <th>Humidity</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+
+            </table>
+
+            <!--This is where all divs are being appended in javascript-->
+
+        </div>
+    </main>
 </div>
 
+<!--SCRIPT SOURCES BELOW-->
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v4.4.1/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v1.1.1/mapbox-gl.js'></script>
 <script src="http://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
@@ -44,9 +64,8 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <!-- Mapbox JS -->
 <!--<script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>-->
+<script src='js/keys.js'></script>
 <script src="js/get-coords.js"></script>
-
-
 
 </body>
 </html>
